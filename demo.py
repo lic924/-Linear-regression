@@ -1,5 +1,6 @@
-#這是我的新註解
-#這是我的第二次修改
-print("這是我的第三次")
-#你好，這是第四次
-#這是第五次
+def main():
+    print("在master建立一個branch")
+
+# 方法2：Python 慣例寫法
+if __name__ == "__main__":
+    main()
