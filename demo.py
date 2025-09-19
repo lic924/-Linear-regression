@@ -4,3 +4,4 @@ print("這是我的第三次")
 #你好，這是第四次
 #這是第五次
 print("hello, world!")
+print("new Function Add")
