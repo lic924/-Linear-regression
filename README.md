@@ -25,29 +25,23 @@
 ## 🖼️ Prompt截圖
 
 ### 1. 先將問題打給LLM，請他輸出合適的prompt
-![Prompt 截圖](images/1.jpg)
+![Prompt 截圖](1.jpg)
 
 
 
 ---
 
-### 2. 線性回歸擬合
-![回歸結果](images/regression.jpg)
+### 2. 執行該prompt
+![Prompt 截圖](2.jpg)
 
-> 上圖：顯示擬合出的紅色回歸線，並以紫色標記離群點。
-
----
-
-### 3. 模型係數與離群點表格
-![係數與離群點](images/outliers.jpg)
-
-> 上圖：模型係數顯示與前 5 大離群點表格。
+> 上圖：生成所需的code
 
 ---
 
-## ⚙️ 安裝與執行
+### 3. 調整code之功能
+![Prompt 截圖](4.jpg)
 
-1. 下載此專案  
-   ```bash
-   git clone https://github.com/lic924/linear_regression_app.git
-   cd linear_regression_app
+> 上圖：因為有些功能不需要，所以請他移徐
+
+---
+
