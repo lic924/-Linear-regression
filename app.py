@@ -1,20 +1,3 @@
-# streamlit_app.py
-# ===============================================================
-# HW1-1: Interactive Linear Regression Visualizer
-#
-# How to install (最低可用指令)
-#   pip install streamlit scikit-learn matplotlib numpy pandas
-#
-# How to run
-#   streamlit run streamlit_app.py
-#
-# 本 App 目的：
-#   以可互動的方式示範「簡單線性回歸 y = a·x + b + noise」，
-#   並以 CRISP-DM 六步驟組織程式結構與註解，包含資料生成、模型訓練、
-#   以及前 5 大離群點標註與表格輸出。
-#   ※ b 在本範例固定為 5（程式內清楚標示）。
-# ===============================================================
-
 from __future__ import annotations
 
 import numpy as np
@@ -22,14 +5,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 import streamlit as st
-
-
-# ------------------------------
-# CRISP-DM Step 1: Business Understanding
-# ------------------------------
-# 教學目的：讓使用者調整資料量 (n)、真實斜率 a、雜訊變異 var，
-# 視覺化線性關係、回歸線與離群點對模型的影響，並查看估計係數與離群點。
-
 
 # ========== UI 基本設定 ==========
 st.set_page_config(page_title="HW1-1: Interactive Linear Regression Visualizer", layout="wide")
@@ -139,11 +114,6 @@ def plot_regression_with_outliers(x: np.ndarray, y: np.ndarray, a_hat: float, b_
     fig.tight_layout()
     return fig
 
-
-# ------------------------------
-# 主流程（整合 CRISP-DM 步驟）
-# ------------------------------
-
 # Step 2: Data Understanding（& 產生資料）
 x, y, b_true = generate_data(n=n, a=a_true, var=var, seed=42, b=5.0)
 
@@ -173,9 +143,3 @@ with col2:
 st.subheader("Top 5 Outliers")
 outliers_df = get_top_outliers(x, y, y_pred, k=5)
 st.dataframe(outliers_df, use_container_width=True)
-
-# 結語（註解說明）
-# ------------------------------
-# CRISP-DM Step 6: Deployment
-# 本檔即為可直接部署的單檔 Streamlit App。深色/淺色主題可用 Streamlit 偏好切換；
-# 圖表色彩簡潔，回歸線使用紅色，離群點以紫色標出並加上 Outlier <index> 註記。
