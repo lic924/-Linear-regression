@@ -143,3 +143,4 @@ with col2:
 st.subheader("Top 5 Outliers")
 outliers_df = get_top_outliers(x, y, y_pred, k=5)
 st.dataframe(outliers_df, use_container_width=True)
+# try
